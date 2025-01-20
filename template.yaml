@@ -44,6 +44,7 @@ spec:
           ui:options:
             allowedHosts:
               - gitlab.com
+              - gitlab.apps.cluster-pwfn2.pwfn2.sandbox1370.opentlc.com
   steps:
     - id: template
       name: Fetch Skeleton + Template
@@ -61,13 +62,13 @@ spec:
           host: ${{ parameters.repo.host }}
           destination_own: ${{ parameters.repo.owner }}
 
-
     - id: publish
       name: Publish
       action: publish:gitlab
       input:
         allowedHosts:
           - gitlab.com
+          - gitlab.apps.cluster-pwfn2.pwfn2.sandbox1370.opentlc.com
         description: This is ${{ parameters.component_id }}
         repoUrl: ${{ parameters.repoUrl }}
 
